@@ -21,7 +21,7 @@ export function NavigationBar() {
         <Link to="/users" className="[&.active]:font-bold">
           {t('users')}
         </Link>
-        <Link to="/about" className="[&.active]:font-bold">
+        <Link to="/config" className="[&.active]:font-bold">
           {t('config')}
         </Link>
       </div>
