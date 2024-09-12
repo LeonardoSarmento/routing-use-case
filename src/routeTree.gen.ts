@@ -127,18 +127,104 @@ declare module '@tanstack/react-router' {
 
 // Create and export the route tree
 
-export const routeTree = rootRoute.addChildren({
-  IndexRoute,
-  AuthRoute: AuthRoute.addChildren({
-    AuthHomeRoute,
-    AuthUsersRoute: AuthUsersRoute.addChildren({
-      AuthUsersIdRoute,
-      AuthUsersIndexRoute,
-    }),
-    AuthIndexRoute,
-  }),
-  ConfigRoute,
-})
+interface AuthUsersRouteChildren {
+  AuthUsersIdRoute: typeof AuthUsersIdRoute
+  AuthUsersIndexRoute: typeof AuthUsersIndexRoute
+}
+
+const AuthUsersRouteChildren: AuthUsersRouteChildren = {
+  AuthUsersIdRoute: AuthUsersIdRoute,
+  AuthUsersIndexRoute: AuthUsersIndexRoute,
+}
+
+const AuthUsersRouteWithChildren = AuthUsersRoute._addFileChildren(
+  AuthUsersRouteChildren,
+)
+
+interface AuthRouteChildren {
+  AuthHomeRoute: typeof AuthHomeRoute
+  AuthUsersRoute: typeof AuthUsersRouteWithChildren
+  AuthIndexRoute: typeof AuthIndexRoute
+}
+
+const AuthRouteChildren: AuthRouteChildren = {
+  AuthHomeRoute: AuthHomeRoute,
+  AuthUsersRoute: AuthUsersRouteWithChildren,
+  AuthIndexRoute: AuthIndexRoute,
+}
+
+const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
+
+export interface FileRoutesByFullPath {
+  '/': typeof AuthIndexRoute
+  '': typeof AuthRouteWithChildren
+  '/config': typeof ConfigRoute
+  '/home': typeof AuthHomeRoute
+  '/users': typeof AuthUsersRouteWithChildren
+  '/users/$id': typeof AuthUsersIdRoute
+  '/users/': typeof AuthUsersIndexRoute
+}
+
+export interface FileRoutesByTo {
+  '/': typeof AuthIndexRoute
+  '/config': typeof ConfigRoute
+  '/home': typeof AuthHomeRoute
+  '/users/$id': typeof AuthUsersIdRoute
+  '/users': typeof AuthUsersIndexRoute
+}
+
+export interface FileRoutesById {
+  __root__: typeof rootRoute
+  '/': typeof IndexRoute
+  '/_auth': typeof AuthRouteWithChildren
+  '/config': typeof ConfigRoute
+  '/_auth/home': typeof AuthHomeRoute
+  '/_auth/users': typeof AuthUsersRouteWithChildren
+  '/_auth/': typeof AuthIndexRoute
+  '/_auth/users/$id': typeof AuthUsersIdRoute
+  '/_auth/users/': typeof AuthUsersIndexRoute
+}
+
+export interface FileRouteTypes {
+  fileRoutesByFullPath: FileRoutesByFullPath
+  fullPaths:
+    | '/'
+    | ''
+    | '/config'
+    | '/home'
+    | '/users'
+    | '/users/$id'
+    | '/users/'
+  fileRoutesByTo: FileRoutesByTo
+  to: '/' | '/config' | '/home' | '/users/$id' | '/users'
+  id:
+    | '__root__'
+    | '/'
+    | '/_auth'
+    | '/config'
+    | '/_auth/home'
+    | '/_auth/users'
+    | '/_auth/'
+    | '/_auth/users/$id'
+    | '/_auth/users/'
+  fileRoutesById: FileRoutesById
+}
+
+export interface RootRouteChildren {
+  IndexRoute: typeof IndexRoute
+  AuthRoute: typeof AuthRouteWithChildren
+  ConfigRoute: typeof ConfigRoute
+}
+
+const rootRouteChildren: RootRouteChildren = {
+  IndexRoute: IndexRoute,
+  AuthRoute: AuthRouteWithChildren,
+  ConfigRoute: ConfigRoute,
+}
+
+export const routeTree = rootRoute
+  ._addFileChildren(rootRouteChildren)
+  ._addFileTypes<FileRouteTypes>()
 
 /* prettier-ignore-end */
 
