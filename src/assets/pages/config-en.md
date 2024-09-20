@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Setting Up Your Project with Dynamic Routing and State Management
 
 The **TanStack Router** is an excellent choice for projects seeking high performance and strong TypeScript typing, while also simplifying routing in React applications. Here's a detailed step-by-step guide to setting up a project with **TanStack Router**, **Vite**, and **TypeScript**.
@@ -558,3 +559,10 @@ This guide provides a solid overview of the initial configuration, but TanStack 
 If you're interested, the link to the **repository** is: [Routing - Use case](https://github.com/LeonardoSarmento/routing-use-case)
 
 Come back often :)
+=======
+## Setting up you project for dynamic routing and state managment
+
+Just wait a little bit. i'm writting about it :)
+
+Meanwhile how about you browse my [`portfolio`](https://leoasarmento.com/).
+>>>>>>> 5eaea9de51143d548afbb97e5e9e9ffbb93f326a

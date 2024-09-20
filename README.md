@@ -4,18 +4,18 @@ Use case to apply routing and state managment to a project.
 
 ### Main Techs
 
-- Router : `@tanstack/react-router` (^1.52.3)
-- State Managment : `@tanstack/query` (^5.53.2)
+- Router : `@tanstack/react-router` (^1.57.10)
+- State Managment : `@tanstack/query` (^5.56.0)
 
 ### Project Techs
 
-- Language : `TypeScript` (^5.5.4)
-- Web Application framework : `Vite` (^5.4.2)
+- Language : `TypeScript` (^5.6.2)
+- Web Application framework : `Vite` (^5.4.4)
 - Markdown Viewer : `@uiw/react-markdown-preview` (^5.1.2)
 - React i18n: `react-i18next` (^15.0.1)
 - Form : `react-hook-form` (^7.52.2)
 - Validation : `zod` (^3.23.8)
-- Styling : `tailwindcss` (^3.4.10)
+- Styling : `tailwindcss` (^3.4.11)
 
 - Lint : `eslint` (^8.57.0)
 - Formatting : `prettier` (^3.3.3)

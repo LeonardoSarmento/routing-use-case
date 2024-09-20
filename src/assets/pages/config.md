@@ -1,5 +1,6 @@
 ## Configurando o seu projeto com roteamento dinamico e gerenciamento de estados
 
+<<<<<<< HEAD
 O **TanStack Router** é uma excelente escolha para projetos que buscam alta performance e forte tipagem com TypeScript, além de facilitar o roteamento em aplicações React. Aqui vai um passo a passo detalhado para configurar um projeto com **TanStack Router**, **Vite** e **TypeScript**.
 
 Nesse exemplo utilizaremos configurações onde conseguiremos nos aproveitar de funcionalidades como **Contexto de Autentificação**, **Carregamento de dados através do Loader**,**Gerenciamento de Dados** e **Utilização de parâmetros na URL para armazenar dados a serem usados na requisição**.
@@ -557,3 +558,8 @@ Esse guia dá uma visão sólida da configuração inicial, mas o TanStack Route
 Caso se interesse, o link para o **repositório** é: [Roteamento - Caso de uso](https://github.com/LeonardoSarmento/routing-use-case)
 
 Volte sempre :)
+=======
+Calma que vou escrever ainda sobre. :)
+
+Enquanto isso visite meu [`portfolio`](https://leoasarmento.com/).
+>>>>>>> 5eaea9de51143d548afbb97e5e9e9ffbb93f326a

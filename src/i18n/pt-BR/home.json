@@ -5,7 +5,7 @@
   "footer": "Espero que você tenha um ótimo desenvolvimento!",
   "stack": {
     "main": {
-      "title": "i18n TechStack",
+      "title": "Rotamento e gerenciamento de estado TechStack",
       "description": "Dependências utilizadas para configurar o sistema de internacionalização",
       "tech": [
         {
